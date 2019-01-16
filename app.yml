@@ -1,1 +1,22 @@
 runtime: nodejs
+env: flex
+service: basic-helloworld
+# beta_settings:
+#  cloud_sql_instances: 
+manual_scaling:
+ instances: 1
+resources:
+ cpu: 1.0
+ memory_gb: 1.00
+skip_files:
+- public/
+- node_modules/
+- README.md
+- coverage/
+- .gitignore
+
+endpoints_api_service:
+ # The following values are to be replaced by information from the output of
+ # 'gcloud service-management deploy app.yaml' command.
+#  name: helloworld.com
+ config_id: 2018-01-16v1
